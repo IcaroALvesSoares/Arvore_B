@@ -95,6 +95,8 @@ Os campos possuem tamanhos fixos e variáveis:
 | Preço      | Fixo     |
 | Quantidade | Fixo     |
 
+O sistema utiliza campos de tamanho fixo e variável. Os campos numéricos, como código, preço e quantidade, possuem tamanho previsível e são tratados como campos fixos. Já os campos textuais, como nome, categoria e marca, possuem tamanhos variáveis dependendo do conteúdo armazenado. Essa abordagem permite representar diferentes tipos de dados presentes no sistema de estoque.
+
 ## Índice Primário ##
 
 O arquivo indice.txt armazena: codigo -> posição do registro no arquivo
@@ -144,6 +146,7 @@ Inserção
 
 Fluxo:
 
+```
 Usuário informa os dados do produto
 ↓
 Produto é salvo no arquivo dados.txt
@@ -153,11 +156,13 @@ Posição do registro é obtida com ftell()
 Código e posição são inseridos na Árvore-B
 ↓
 Índice é atualizado
+```
 
 ## Busca ##
 
 Fluxo:
 
+```
 Usuário informa o código do produto
 ↓
 Árvore-B localiza a chave
@@ -167,6 +172,7 @@ Posição do registro é encontrada
 Sistema acessa diretamente o arquivo
 ↓
 Produto é exibido
+```
 
 A busca ocorre através da chave primária: codigo do produto
 
@@ -174,6 +180,7 @@ A busca ocorre através da chave primária: codigo do produto
 
 Fluxo:
 
+```
 Usuário informa o código
 ↓
 Árvore-B localiza o registro
@@ -181,6 +188,7 @@ Usuário informa o código
 Arquivo é atualizado
 ↓
 Índice é reconstruído
+```
 
 ## Remoção ##
 
@@ -188,6 +196,7 @@ A remoção é gerenciada diretamente pela Árvore-B.
 
 Fluxo:
 
+```
 Usuário informa o código
 ↓
 Árvore-B remove a chave
@@ -197,6 +206,7 @@ Usuário informa o código
 Registro é removido fisicamente do arquivo
 ↓
 Índice é reconstruído
+```
 
 Durante a remoção podem ocorrer:
 
@@ -208,16 +218,19 @@ Rebalanceamento.
 
 Fluxo:
 
+```
 Percurso em ordem da Árvore-B
 ↓
 Registros são acessados no arquivo
 ↓
 Produtos são exibidos ordenados pelo código
+```
 
 # Estruturas Utilizadas
 
 ## Produto ##
 
+```
 typedef struct {
     int codigo;
     char nome[50];
@@ -226,16 +239,20 @@ typedef struct {
     float preco;
     int quantidade;
 } Produto;
+```
 
 ## Índice Primário ##
 
+```
 typedef struct {
     int codigo;
     long posicao;
 } ChaveIndice;
+```
 
 ## Nó da Árvore-B ##
 
+```
 #define T 2
 
 typedef struct ArvoreBNode {
@@ -247,12 +264,15 @@ typedef struct ArvoreBNode {
     struct ArvoreBNode *filhos[2 * T];
 
 } ArvoreBNode;
+```
 
 ## Bibliotecas Utilizadas ##
 
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+```
 
 # Compilação
 
