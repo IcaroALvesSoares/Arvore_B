@@ -1,0 +1,2 @@
+100|Celular|Smartphone|Samsung|1500.00|5
+101|Notebook|Notebook|Apple|25000.00|10
