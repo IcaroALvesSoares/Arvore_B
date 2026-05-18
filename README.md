@@ -47,27 +47,27 @@ Cada produto possui:
 # Estrutura do Projeto
 
 ```
-arvore-b/
-│
-├── main.c
-│
-├── produto/
-│   ├── produto.c
-│   └── produto.h
-│
-├── arvore_b/
-│   ├── arvore_b.c
-│   └── arvore_b.h
+ARVORE_B/
 │
 ├── arquivo/
 │   ├── arquivo.c
 │   └── arquivo.h
 │
+├── arvore_b/
+│   ├── arvore_b.c
+│   └── arvore_b.h
+│
+├── build/
+│
 ├── dados/
 │   ├── dados.txt
 │   └── indice.txt
 │
-└── build/
+├── produto/
+│   ├── produto.c
+│   └── produto.h
+│
+└── main.c
 ```
 
 # Estrutura dos Dados
