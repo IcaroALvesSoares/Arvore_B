@@ -32,12 +32,23 @@ typedef struct {
 } Produto;
 
 /*
+ * Lê o codigo de um produto informado pelo usuário.
+ *
+ * Retorna:
+ *  Codigo do produto.
+ */
+int lerCodigoProduto();
+
+/*
  * Lê os dados de um produto informados pelo usuário.
+ *
+ * codigo:
+ *  Codigo do produto.
  *
  * Retorna:
  *  Estrutura Produto preenchida.
  */
-Produto lerProdutoDoTeclado();
+Produto lerDadosProdutoComCodigo(int codigo);
 
 /*
  * Exibe os dados de um produto na tela.

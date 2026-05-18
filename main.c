@@ -31,12 +31,14 @@ void reconstruirIndice(ArvoreBNode **raiz) {
  *  5. Atualiza o índice primário.
  */
 void inserirProduto(ArvoreBNode **raiz) {
-    Produto p = lerProdutoDoTeclado();
+    int codigo = lerCodigoProduto();
 
-    if (buscarArvore(*raiz, p.codigo) != NULL) {
+    if (buscarArvore(*raiz, codigo) != NULL) {
         printf("Erro: ja existe um produto com esse codigo.\n");
         return;
     }
+
+    Produto p = lerDadosProdutoComCodigo(codigo);
 
     long posicao = salvarProdutoArquivo(p);
 
@@ -109,12 +111,15 @@ void modificarProduto(ArvoreBNode **raiz) {
     }
 
     printf("\nDigite os novos dados do produto.\n");
-    Produto novo = lerProdutoDoTeclado();
 
-    if (novo.codigo != codigo && buscarArvore(*raiz, novo.codigo) != NULL) {
+    int novoCodigo = lerCodigoProduto();
+
+    if (novoCodigo != codigo && buscarArvore(*raiz, novoCodigo) != NULL) {
         printf("Erro: o novo codigo ja existe.\n");
         return;
     }
+
+    Produto novo = lerDadosProdutoComCodigo(novoCodigo);
 
     if (atualizarProdutoArquivo(codigo, novo)) {
         if (novo.codigo != codigo) {
@@ -162,6 +167,20 @@ void removerProduto(ArvoreBNode **raiz) {
 }
 
 /*
+ * Pausa a execução até o usuário pressionar ENTER.
+ */
+void pausarTela() {
+    printf("\nPressione ENTER para continuar...");
+    
+    int c;
+
+    // limpa buffer restante
+    while ((c = getchar()) != '\n' && c != EOF);
+
+    getchar();
+}
+
+/*
  * Exibe o menu principal do sistema.
  */
 void menu() {
@@ -189,22 +208,27 @@ int main() {
         switch (opcao) {
             case 1:
                 inserirProduto(&raiz);
+                pausarTela();
                 break;
 
             case 2:
                 buscarProduto(raiz);
+                pausarTela();
                 break;
 
             case 3:
                 modificarProduto(&raiz);
+                pausarTela();
                 break;
 
             case 4:
                 removerProduto(&raiz);
+                pausarTela();
                 break;
 
             case 5:
                 listarProdutosOrdenados(raiz);
+                pausarTela();
                 break;
 
             case 0:

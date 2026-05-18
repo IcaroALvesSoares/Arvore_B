@@ -12,12 +12,20 @@ static void lerTexto(char *campo, int tamanho) {
     campo[strcspn(campo, "\n")] = '\0';
 }
 
-Produto lerProdutoDoTeclado() {
-    Produto p;
+int lerCodigoProduto() {
+    int codigo;
 
     printf("Codigo: ");
-    scanf("%d", &p.codigo);
+    scanf("%d", &codigo);
     limparBuffer();
+
+    return codigo;
+}
+
+Produto lerDadosProdutoComCodigo(int codigo) {
+    Produto p;
+
+    p.codigo = codigo;
 
     printf("Nome: ");
     lerTexto(p.nome, 50);
@@ -42,6 +50,6 @@ void imprimirProduto(Produto p) {
     printf("Nome: %s\n", p.nome);
     printf("Categoria: %s\n", p.categoria);
     printf("Marca: %s\n", p.marca);
-    printf("Preco: %.2f\n", p.preco);
+    printf("Preco: R$%.2f\n", p.preco);
     printf("Quantidade: %d\n", p.quantidade);
 }
