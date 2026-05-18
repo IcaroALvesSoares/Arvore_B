@@ -78,9 +78,11 @@ O arquivo `dados.txt` armazena os registros completos dos produtos.
 
 Exemplo:
 
+```
 1001|Notebook|Computador|Dell|4200.00|5
 1002|Smartphone|Celular|Samsung|2500.00|10
 1003|Mouse|Periferico|Logitech|120.00|20
+```
 
 Os campos possuem tamanhos fixos e variáveis:
 
@@ -99,9 +101,11 @@ O arquivo indice.txt armazena: codigo -> posição do registro no arquivo
 
 Exemplo:
 
+```
 1001|0
 1002|58
 1003|120
+```
 
 A posição representa o byte inicial do registro dentro do arquivo de dados.
 
