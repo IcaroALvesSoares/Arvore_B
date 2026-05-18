@@ -210,9 +210,9 @@ Registro é removido fisicamente do arquivo
 
 Durante a remoção podem ocorrer:
 
-Redistribuição;
-Concatenação (merge);
-Rebalanceamento.
+- Redistribuição;
+- Concatenação (merge);
+- Rebalanceamento.
 
 ## Listagem Ordenada ##
 
