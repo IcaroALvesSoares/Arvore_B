@@ -99,7 +99,7 @@ O sistema utiliza campos de tamanho fixo e variável. Os campos numéricos, como
 
 ## Índice Primário ##
 
-O arquivo indice.txt armazena: codigo -> posição do registro no arquivo
+O arquivo `indice.txt` armazena: codigo -> posição do registro no arquivo
 
 Exemplo:
 
@@ -137,7 +137,7 @@ Máximo de 4 filhos por nó.
 
 Ao iniciar o sistema:
 
-O arquivo dados.txt é lido;
+O arquivo `dados.txt` é lido;
 Os índices são carregados;
 A Árvore-B é reconstruída em memória;
 O sistema fica pronto para operações.
