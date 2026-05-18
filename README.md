@@ -117,19 +117,19 @@ A Árvore-B é utilizada como estrutura principal de gerenciamento dos índices 
 
 Ela é responsável por:
 
-Inserção das chaves;
-Busca das chaves;
-Remoção das chaves;
-Balanceamento da árvore;
-Organização ordenada dos registros.
+- Inserção das chaves;
+- Busca das chaves;
+- Remoção das chaves;
+- Balanceamento da árvore;
+- Organização ordenada dos registros.
 
 Foi utilizada uma Árvore-B com grau mínimo: t = 2
 
 Características:
 
-Mínimo de 1 chave por nó;
-Máximo de 3 chaves por nó;
-Máximo de 4 filhos por nó.
+- Mínimo de 1 chave por nó;
+- Máximo de 3 chaves por nó;
+- Máximo de 4 filhos por nó.
 
 # Funcionamento Geral do Sistema
 
@@ -137,12 +137,13 @@ Máximo de 4 filhos por nó.
 
 Ao iniciar o sistema:
 
-O arquivo `dados.txt` é lido;
-Os índices são carregados;
-A Árvore-B é reconstruída em memória;
-O sistema fica pronto para operações.
-Operações do Sistema
-Inserção
+- O arquivo `dados.txt` é lido;
+- Os índices são carregados;
+- A Árvore-B é reconstruída em memória;
+- O sistema fica pronto para operações.
+- Operações do Sistema
+
+## Inserção ##
 
 Fluxo:
 
